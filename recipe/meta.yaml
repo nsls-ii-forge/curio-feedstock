@@ -1,0 +1,57 @@
+{% set name = "curio" %}
+{% set version = "0.9" %}
+{% set hash_type = "sha256" %}
+{% set hash = "51d1a7b49b4f8dd1486ac785c72d522962e93ccfdcfc1f818f5c7553a307b5ef" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  {{ hash_type }}: {{ hash }}
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True  # [py<36]
+
+requirements:
+  build:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  source_files:
+    - tests
+    - examples
+  requires:
+    - pytest
+  imports:
+    - {{ name }}
+  commands:
+    - pytest --pyargs {{ name}}.tests 
+
+about:
+  home: https://curio.readthedocs.org/
+  license: BSD 3-clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'The coroutine concurrency library.'
+  description: |
+    Curio is a library for performing concurrent I/O and common system programming
+    tasks such as launching subprocesses and farming work out to thread and process
+    pools. It uses Python coroutines and the explicit async/await syntax introduced
+    in Python 3.5. Its programming model is based on cooperative multitasking and
+    existing programming abstractions such as threads, sockets, files, subprocesses,
+    locks, and queues. You'll find it to be small and fast.
+  doc_url: https://curio.readthedocs.org/
+  dev_url: https://github.com/dabeaz/curio
+
+extra:
+  recipe-maintainers:
+    - scopatz
+    - jochym
