@@ -18,7 +18,7 @@ build:
   skip: True  # [py<36]
 
 requirements:
-  host:
+  build:
     - python
     - pip
   run:
