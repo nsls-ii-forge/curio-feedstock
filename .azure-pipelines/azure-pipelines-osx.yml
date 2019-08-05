@@ -46,7 +46,6 @@ jobs:
   - script: |
       source activate base
       echo "Configuring conda."
-
       setup_conda_rc ./ ./recipe ./.ci_support/${CONFIG}.yaml
       export CI=azure
       source run_conda_forge_build_setup

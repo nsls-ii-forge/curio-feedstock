@@ -33,7 +33,7 @@ test:
   imports:
     - {{ name }}
   commands:
-    - pytest --pyargs {{ name}}.tests 
+    - pytest # [linux] 
 
 about:
   home: https://curio.readthedocs.org/
