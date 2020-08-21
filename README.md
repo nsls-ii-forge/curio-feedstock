@@ -5,7 +5,7 @@ Home: https://curio.readthedocs.org/
 
 Package license: BSD 3-clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The coroutine concurrency library.
 
@@ -23,7 +23,7 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=&branchName=master">
+      <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=18&branchName=master">
         <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/curio-feedstock?branchName=master">
       </a>
     </td>
