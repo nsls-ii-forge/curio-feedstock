@@ -1,6 +1,6 @@
 {% set name = "curio" %}
 {% set version = "1.4" %}
-{% set hash = "57edce81c837f3c2cf42fbb346dee26e537d1659e6605269fb13bd179e068744" %}
+{% set sha256 = "57edce81c837f3c2cf42fbb346dee26e537d1659e6605269fb13bd179e068744" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ hash }}
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ test:
   requires:
     - pytest
   imports:
-    - {{ name }}
+    - curio
   commands:
     - pytest
 
