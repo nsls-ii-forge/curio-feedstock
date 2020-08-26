@@ -1,7 +1,6 @@
 {% set name = "curio" %}
-{% set version = "0.9" %}
-{% set hash_type = "sha256" %}
-{% set hash = "51d1a7b49b4f8dd1486ac785c72d522962e93ccfdcfc1f818f5c7553a307b5ef" %}
+{% set version = "1.4" %}
+{% set sha256 = "57edce81c837f3c2cf42fbb346dee26e537d1659e6605269fb13bd179e068744" %}
 
 package:
   name: {{ name|lower }}
@@ -9,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash }}
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 2
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -30,7 +29,7 @@ test:
   requires:
     - pytest
   imports:
-    - {{ name }}
+    - curio
   commands:
     - pytest
 
@@ -39,7 +38,7 @@ about:
   license: BSD 3-clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'The coroutine concurrency library.'
+  summary: The coroutine concurrency library.
   description: |
     Curio is a library for performing concurrent I/O and common system programming
     tasks such as launching subprocesses and farming work out to thread and process
