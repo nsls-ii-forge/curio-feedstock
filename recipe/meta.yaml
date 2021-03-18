@@ -1,6 +1,6 @@
 {% set name = "curio" %}
-{% set version = "1.4" %}
-{% set sha256 = "57edce81c837f3c2cf42fbb346dee26e537d1659e6605269fb13bd179e068744" %}
+{% set version = "1.5" %}
+{% set sha256 = "af08212e590bb7da8e4cc39c42012711494dc20d622f162155ba296cc2e3bc10" %}
 
 package:
   name: {{ name|lower }}
